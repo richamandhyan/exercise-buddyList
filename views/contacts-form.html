@@ -1,0 +1,36 @@
+
+      <div ng-controller="addContactCtrl">
+        <div class="list-group-item">
+
+          <div class="form-group">
+  
+            <p><label for="name">name: </label> <input id="name" class="form-control" type="text" ng-model="currentContact.name" ng-required> </p>
+			<p><label for="username">username: </label> <input id="username" class="form-control" type="text" ng-model="currentContact.username" ng-required> </p>
+			<p><label for="dob">date of birth:</label><input type="date" class="form-control" id="dob" name="dob" ng-model="currentContact.dob" placeholder="Date of Birth" ng-required>	
+            <p><label for="email">email:</label> <input id="email" class="form-control" type="text" ng-model="currentContact.email"ng-required> </p>
+            <p><label for="status">status:</label> <input id="status" class="form-control" type="text" ng-model="currentContact.status" ng-required> </p>
+            <p><label for="notes">bio:</label></p>
+            <textarea class="form-control" id="notes" rows="3" ng-model="currentContact.notes" ng-required></textarea>
+          </div>
+        
+          <a ng-if="path === '/add' " ng-href="#/contact-info/{{ contacts.length - 1 }}" ng-click="addContact()">
+            <button class="btn btn-default">
+             <span class="glyphicon glyphicon-ok"></span>
+             <span> Add</span>
+            </button>
+          </a>
+
+          <a ng-if="path !== '/add'" ng-href="#/contact-info/{{index}}">
+            <button class="btn btn-default">
+             <span class="glyphicon glyphicon-ok"></span>
+             <span> Save Edits</span>
+            </button>
+          </a>
+
+          <a href="#/">
+            <button class="btn btn-default">
+              <span class="glyphicon glyphicon-remove"></span><span>  Cancel</span>
+            </button>
+          </a>
+        </div>
+      </div>
